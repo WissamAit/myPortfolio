@@ -8,43 +8,31 @@ import {
 import { FiMail } from "react-icons/fi";
 
 const siteConfig = {
-  copyright: `Copyright © ${new Date().getFullYear()} Muhammad Ahmad. All Rights Reserved.`,
+  
   author: {
-    name: "Muhammad Ahmad",
+    name: "Wissam AIT KHEDDACHE",
     accounts: [
       {
-        url: "https://github.com/MA-Ahmad",
+        url: "https://github.com/WissamAit",
         label: "Github Account",
         type: "gray",
         icon: <FaGithub />
       },
       {
-        url: "https://twitter.com/muhammad_ahmaad",
-        label: "Twitter Account",
-        type: "twitter",
-        icon: <FaTwitter />
-      },
-      {
-        url: "https://dev.to/m_ahmad",
+        url: "https://dev.to/wissamAit",
         label: "Dev Account",
         type: "gray",
         icon: <FaDev />
       },
       {
-        url: "https://linkedin.com/in/muhammad-ahmad20",
+        url: "https://linkedin.com/in/wissam-ait",
         label: "LinkedIn Account",
         type: "linkedin",
         icon: <FaLinkedin />
       },
       {
-        url: "https://www.quora.com/profile/Muhammad-Ahmad-66",
-        label: "Quora Account",
-        type: "red",
-        icon: <FaQuora />
-      },
-      {
-        url: "mailto:muhammad.ahmad8043@gmail.com",
-        label: "Mail ahmad",
+        url: "mailto:aitkheddachewissam@gmail.com",
+        label: "Mail Wissam",
         type: "gray",
         icon: <FiMail />
       }

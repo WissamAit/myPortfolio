@@ -11,20 +11,13 @@ import {
   useColorModeValue,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
   Stack,
   Icon
 } from '@chakra-ui/react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { ColorModeSwitcher } from '../theme/ColorModeSwitcher';
-import { AiTwotoneThunderbolt } from 'react-icons/ai';
 import { BiChevronDown } from 'react-icons/bi';
-import { CgArrowsExchange } from 'react-icons/cg';
-import { BsCheckCircle } from 'react-icons/bs';
-import { MdTimeline } from 'react-icons/md';
-import { BsBook } from 'react-icons/bs';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { AccentPicker } from 'components/theme/Accent';
@@ -34,22 +27,6 @@ import { MotionBox } from 'components/shared/animations/motion';
 const webLinks = [
   { name: 'About', path: '/about' },
   { name: 'Blog', path: '/blog' }
-];
-
-const mobileLinks = [
-  { name: 'Projects', path: '/projects' },
-  { name: 'Open Source', path: '/open-source' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Changelog', path: '/changelog' }
-];
-
-const dropdownLinks = [
-  { name: 'Projects', path: '/projects' },
-  { name: 'Tech Stack', path: '/tech-stack' },
-  { name: 'Open Source', path: '/open-source' },
-  { name: 'Achievements', path: '/achievements' },
-  { name: 'Changelog', path: '/changelog' }
-  // { name: "Developer Story", path: "/developer-story" }
 ];
 
 interface NavLinkProps {
@@ -98,7 +75,7 @@ interface MenuLinkProps {
   onClose: () => void;
 }
 
-const MenuLink = (props: MenuLinkProps) => {
+/*const MenuLink = (props: MenuLinkProps) => {
   const iconsObj = {
     '/tech-stack': <Icon as={AiTwotoneThunderbolt} size={18} color={props.color} />,
     '/open-source': <Icon as={BsBook} size={18} color={props.color} />,
@@ -123,7 +100,7 @@ const MenuLink = (props: MenuLinkProps) => {
       </Link>
     </NextLink>
   );
-};
+};*/
 
 export default function TopNav() {
   const linkColor = useLinkColor();
@@ -171,7 +148,7 @@ export default function TopNav() {
                   size={'sm'}
                   showBorder={true}
                   borderColor={linkColor}
-                  src={'https://avatars2.githubusercontent.com/u/37842853?v=4'}
+                  src={'https://media-exp1.licdn.com/dms/image/C4E03AQHTYqBNmq7g3w/profile-displayphoto-shrink_800_800/0/1663337757751?e=1672876800&v=beta&t=uTjP8XfsaIU-btySwnp688a2H9V59qrPiQQ-SV-YVrU'}
                 />
               </NextLink>
             </MotionBox>
@@ -202,37 +179,7 @@ export default function TopNav() {
                       _hover={{ color: linkColor, bg: menuProps.bg }}
                       _active={{ bg: menuProps.bg }}
                     >
-                      Links
-                      <Icon
-                        as={BiChevronDown}
-                        h={5}
-                        w={5}
-                        ml={1}
-                        transition={'all .25s ease-in-out'}
-                        transform={isOpen ? 'rotate(180deg)' : ''}
-                      />
                     </MenuButton>
-                    <MenuList
-                      zIndex={5}
-                      bg={useColorModeValue('rgb(255, 255, 255)', 'rgb(26, 32, 44)')}
-                      border="none"
-                      boxShadow={useColorModeValue(
-                        '2px 4px 6px 2px rgba(160, 174, 192, 0.6)',
-                        '2px 4px 6px 2px rgba(9, 17, 28, 0.6)'
-                      )}
-                    >
-                      {dropdownLinks.map((link, index) => (
-                        <MenuLink
-                          key={index}
-                          path={link.path}
-                          name={link.name}
-                          onClose={onClose}
-                          color={linkColor}
-                          bg={menuProps.bg}
-                          rPath={router.pathname}
-                        />
-                      ))}
-                    </MenuList>
                   </>
                 )}
               </Menu>
@@ -257,18 +204,6 @@ export default function TopNav() {
             maxW={800}
             display={['inherit', 'inherit', 'none']}
           >
-            <Stack as={'nav'} spacing={4}>
-              {mobileLinks.map((link, index) => (
-                <NavLink
-                  key={index}
-                  index={index}
-                  name={link.name}
-                  path={link.path}
-                  linkColor={linkColor}
-                  onClose={onClose}
-                />
-              ))}
-            </Stack>
           </Box>
         ) : null}
       </Box>

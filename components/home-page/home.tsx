@@ -60,7 +60,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
               size={'2xl'}
               showBorder={true}
               borderColor={linkColor}
-              src={'https://avatars2.githubusercontent.com/u/37842853?v=4'}
+              src={'https://media-exp1.licdn.com/dms/image/C4E03AQHTYqBNmq7g3w/profile-displayphoto-shrink_800_800/0/1663337757751?e=1672876800&v=beta&t=uTjP8XfsaIU-btySwnp688a2H9V59qrPiQQ-SV-YVrU'}
             />
           </MotionBox>
         </MotionBox>
@@ -127,103 +127,45 @@ const Home: React.FC<BlogPostProps> = (props) => {
                   setShowEmoji(true)
                 }}
               >
-                Hey!
+                Hello !
               </Header>
             </MotionBox>
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
             My name is{' '}
             <Box as="strong" fontWeight="600">
-              Ahmad
+              Wissam
             </Box>{' '}
             and I&apos;m a{' '}
             <Box as="span" whiteSpace="nowrap">
-              Full Stack Developer and
+              Full Stack Developer 
             </Box>{' '}
-            <Box as="span" whiteSpace="nowrap">
-              an open source lover&nbsp;
-            </Box>
             from{' '}
             <Box as="span" whiteSpace="nowrap">
-              Pakistan 🇵🇰
+              France 🇫🇷
             </Box>
+            <Box as="span" whiteSpace="nowrap">
+            Passionate about new technologies, Agile methodologies
+            </Box>{' '}
+            <Box as="span" whiteSpace="nowrap">
+            and software craftsmanship practices.
+            </Box> 
+            <Box as="span" whiteSpace="nowrap">
+            I like to experiment, interact with people, 
+            </Box>
+            share my knowledge with the community and take on new challenges.
+           
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
-            This is my digital garden, where I write about the things I&apos;m
-            working on and share what I&apos;ve learned. 😊
+          Welcome to my small personal space, where I publish what I do and where I will publish articles, 
+          in the near future, to share my knowledge with the community. 😊
           </Box>
         </MotionFlex>
       </Flex>
-
-      <MotionBox
-        w="100%"
-        opacity="0"
-        initial={{
-          translateY: 80,
-        }}
-        animate={{
-          translateY: 0,
-          opacity: 1,
-          transition: {
-            delay: ANIMATION_DURATION - 0.1,
-            duration: ANIMATION_DURATION,
-          },
-        }}
-        zIndex={1}
-      >
-        <Box mt={10}>
-          <ContentBox linkColor={linkColor} />
-          <PopularArticles posts={posts} />
-        </Box>
-      </MotionBox>
     </Flex>
   )
 }
 
-const ContentBox = ({ linkColor }) => {
-  return (
-    <Stack
-      mb={10}
-      mx={[0, 0, 10]}
-      padding={4}
-      align="start"
-      borderLeft="4px solid"
-      borderColor={linkColor}
-      color={'whatsapp'}
-      _hover={{ shadow: 'lg' }}
-      backgroundColor={useColorModeValue('gray.100', '#1e2533')}
-      rounded="sm"
-      fontSize="md"
-    >
-      <Text
-        textAlign="center"
-        color="#53c8c4"
-        fontWeight="bold"
-        fontSize={['md', 'lg']}
-        variant="gradient"
-        fromcolor="blue.400"
-        tocolor="red.500"
-      >
-        New year, new content:
-      </Text>
-      <UnorderedList textAlign="left" paddingLeft={5} m={0}>
-        {newContent.map((content, index) => (
-          <ListItem key={index}>
-            <NextLink href={content.link} passHref>
-              <Link color={linkColor}>
-                {content.text}
-                {content.showNewTag && (
-                  <Badge ml="1" colorScheme="green">
-                    New
-                  </Badge>
-                )}
-              </Link>
-            </NextLink>
-          </ListItem>
-        ))}
-      </UnorderedList>
-    </Stack>
-  )
-}
+
 
 export default Home

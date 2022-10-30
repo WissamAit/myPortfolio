@@ -64,23 +64,10 @@ const TechStack: NextPage<SkillProps> = ({ skills }) => {
   };
 
   return (
-    <PageLayout title="Skills" keywords="rails, ruby, react, javascript, typescript">
+    <PageLayout title="About" keywords="rails, ruby, react, javascript, typescript">
       <PageSlideFade>
         <VStack spacing={8}>
           <Section>
-            <VStack>
-              <Header mt={0} mb={1}>
-                Tech Stack
-              </Header>
-              <Text
-                fontSize={'xl'}
-                color={useColorModeValue('gray.500', 'gray.200')}
-                maxW="lg"
-                textAlign="center"
-              >
-                A list of my favorite tools and technologies that I use on a regular basis.
-              </Text>
-            </VStack>
           </Section>
           <Section zIndex={5}>
             <Tabs variant="soft-rounded" colorScheme="blue" align="center" w="100%">

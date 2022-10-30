@@ -1,66 +1,42 @@
 export const companies = [
   {
-    title: 'Phaedra Solutions',
+    title: 'BNP Paribas, IT Payment Services',
     alt: 'PS image',
-    role: 'Senior Software Engineer',
-    skills: ['ruby', 'rails', 'typescript', 'javascript', 'react', 'aws'],
-    period: '2019 - Present',
-    logo: '/assets/images/logos/phaedra.jpeg'
+    role: 'Fullstack developer in apprenticeship',
+    skills: ['Java 11', 'ELK', 'MongoDB', 'IBM Cloud', 'Docker', 'Kubernetes'],
+    period: 'September 2022 - September 2023',
+    logo: '/assets/images/logos/bnpparibas.jpg'
   },
   {
-    title: 'Brainx Technologies',
-    alt: 'BT image',
-    role: 'Software Engineer',
-    skills: ['ruby', 'rails', 'javascript', 'python'],
-    period: '2018 - 2019',
-    logo: '/assets/images/logos/brainxtech.png'
-  },
-  // {
-  //   title: "Codenya Studio",
-  //   alt: "CS image",
-  //   role: "Co-founder, CTO",
-  //   skills: ["ruby", "rails", "python", "typescript", "react", "aws"],
-  //   period: "2018 - Present",
-  //   logo: '/assets/images/logos/codenya.png'
-  // },
-  {
-    title: 'Brainplow',
-    alt: 'Brainplow image',
-    role: 'Software Engineer',
-    skills: ['javascript', 'python', 'angular'],
-    period: '2017 - 2018',
-    logo: '/assets/images/logos/brainplow.jpg'
+    title: 'BNP Paribas SA',
+    alt: 'PS image',
+    role: 'Java / Angular developer in apprenticeship',
+    skills: ['Java 8', 'Angular 8', 'Junit 5', 'Oracle', 'API Rest'],
+    position : 'Solution for managing the liquidity by producing internal and regulatory management indicators on behalf of the European Central Bank\n'+
+    "- Supporting and refining the User Stories with the PO\n" + 
+    "- Implementing new features (UI and Backend)\n" +  
+    "- Writing and sharing the documentation of the technical components\n"+  
+    "- Rewriting existing legacy application: migrating to a DDD architecture and setting up Unit tests\n"+  
+    "- Bug fixing & Code optimization\n"+  
+    "- Frontend: Angular 8, PrimeNG, Jasmine\n"+  
+    "- Backend: JDK 8, SpringBoot\n"+  
+    "- Code quality & CI/CD: Git, Maven, Jenkins, SonarQube\n",  
+    period: 'September 2020 - September 2022',
+    logo: '/assets/images/logos/bnpparibas.jpg'
   }
 ];
 
 export const institutes = [
   {
-    short_title: 'FAST - NUCES',
-    title: 'National University of Computer and Emerging Sciences',
+    short_title: 'ENSIIE',
+    title: 'Ecole Nationale Supérieure d\'informatique pour l\'industrie et l\'entreprise',
     alt: 'Nuces image',
-    role: "Bachelor's Degree in Computer Science",
-    skills: ['project management', 'web development', 'data structures'],
-    period: '2013 - 2017',
-    startingYear: '2013',
-    logo: '/assets/images/logos/fast.png',
-    awards: [
-      {
-        title: 'Speed Programming Battle',
-        description: 'Won speed programming battle which held at FAST - NUCES.',
-        date: 'May 1, 2015'
-      },
-      {
-        title: 'Silver Medal',
-        description:
-          'This medal was awarded to me by FAST - NUCES for getting a CGPA of 3.9 in 2nd semester.',
-        date: 'May 1, 2014'
-      },
-      {
-        title: 'Speed Programming Battle',
-        description: 'Won speed programming battle which held at FAST - NUCES.',
-        date: 'Nov 1, 2013'
-      }
-    ]
+    role: "Engineer\'s degree in Computer Science",
+    skills: ['software developement', 'Machine learning', 'Devops', 'Green IT', 'System and network security', 'Management'],
+    period: '2020 - 2023',
+    startingYear: '2020',
+    logo: '/assets/images/logos/ensiie.png',
+
   }
 ];
 
@@ -209,3 +185,4 @@ export const newContent = [
     text: 'Started 2022 by updating portfolio website'
   }
 ];
+

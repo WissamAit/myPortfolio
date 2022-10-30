@@ -7,6 +7,7 @@ import {
   Icon,
   Heading,
   useColorModeValue,
+  Box,
 } from '@chakra-ui/react'
 import PostCard from 'components/blog/card'
 import {
@@ -23,6 +24,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import PageLayout from 'components/layouts/pageLayout'
 import { BiSearch } from 'react-icons/bi'
 import { getDbPosts, getDevtoPosts } from 'lib/fetchPosts'
+import { FaClock } from 'react-icons/fa'
 
 const TURQUOISE = '#06b6d4'
 
@@ -31,8 +33,8 @@ const Posts = ({ posts }) => {
   const { dbPosts, isLoading } = getDbPosts()
 
   const filteredBlogPosts = posts.filter((data) => {
-    const searchContent = data.title + data.description
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+   /* const searchContent = data.title + data.description
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase())*/
   })
   filteredBlogPosts?.sort(
     (a, b) => +new Date(b.published_at) - +new Date(a.published_at)
@@ -66,6 +68,9 @@ const Posts = ({ posts }) => {
                 {!filteredBlogPosts.length && (
                   <Heading as="h1" pt={10} pb={10}>
                     No articles found
+                    <Box>
+                      Coming Soon !
+                    </Box>
                   </Heading>
                 )}
                 {filteredBlogPosts.map((post, i) => (

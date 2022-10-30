@@ -9,7 +9,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { FaGraduationCap } from 'react-icons/fa'
+import { FaCode, FaGraduationCap } from 'react-icons/fa'
 import { BsFillBriefcaseFill } from 'react-icons/bs'
 import {
   PageSlideFade,
@@ -17,10 +17,11 @@ import {
   CardTransition,
 } from 'components/shared/animations/page-transitions'
 import { MotionBox } from 'components/shared/animations/motion'
-import { companies, institutes } from 'data/data'
+import { companies, institutes, skillsArray } from 'data/data'
 import Header from 'components/shared/header'
 import PageLayout from 'components/layouts/pageLayout'
 import { Tags } from 'components/shared/Tags'
+import TechStack from './tech-stack'
 
 interface CardProps {
   title: string
@@ -28,6 +29,8 @@ interface CardProps {
   skills: string[]
   period: string
   logo: string
+  position: string
+  awards: string[]
   colorMode: string
   alt?: string
 }
@@ -35,7 +38,7 @@ interface CardProps {
 const TURQUOISE = '#06b6d4'
 
 const Card = (props: CardProps) => {
-  const { title, role, skills, period, logo, colorMode, alt } = props
+  const { title, role, skills, period, logo,position, colorMode, alt } = props
   return (
     <CardTransition>
       <Box
@@ -50,9 +53,9 @@ const Card = (props: CardProps) => {
         <Flex justifyContent="space-between">
           <Flex>
             <Image
-              rounded="full"
-              w={16}
-              h={16}
+              
+              w={100}
+              h={100}
               objectFit="cover"
               fallbackSrc={'/assets/images/placeholder.png'}
               src={logo}
@@ -61,17 +64,24 @@ const Card = (props: CardProps) => {
             <Stack spacing={2} pl={3} align="left">
               <Heading
                 align="left"
-                fontSize="xl"
+                fontSize="xxl"
                 color={`mode.${colorMode}.career.text`}
               >
                 {title}
               </Heading>
               <Heading
                 align="left"
-                fontSize="sm"
+                fontSize="l"
                 color={`mode.${colorMode}.career.subtext`}
               >
                 {role}
+              </Heading>
+              <Heading
+                align="left"
+                fontSize="sm"
+                color={`mode.${colorMode}.career.subtext`}
+              >
+                {position}
               </Heading>
               <Stack
                 spacing={1}
@@ -124,7 +134,7 @@ const About = ({ companies, institutes }) => {
   const { colorMode } = useColorMode()
 
   return (
-    <PageLayout
+    <><PageLayout
       title="About"
       description="My educational and professional journey so far"
     >
@@ -158,8 +168,8 @@ const About = ({ companies, institutes }) => {
                   skills={company.skills}
                   period={company.period}
                   logo={company.logo}
-                  colorMode={colorMode}
-                />
+                  position={company.position}
+                  colorMode={colorMode} awards={[]} />
               </MotionBox>
             ))}
           </VStack>
@@ -189,15 +199,29 @@ const About = ({ companies, institutes }) => {
                   skills={institute.skills}
                   period={institute.period}
                   logo={institute.logo}
-                  colorMode={colorMode}
-                />
+                  awards={institute.awards}
+                  colorMode={colorMode} position={''} />
               </MotionBox>
             ))}
           </VStack>
         </StaggerChildren>
       </PageSlideFade>
     </PageLayout>
+    <Heading>
+            <Flex alignItems="center">
+              <Header underlineColor={TURQUOISE} mt={0} mb={0}>
+                Skills
+              </Header>
+              <Stack pl={3}>
+                <Box as={FaCode} size="25px" />
+              </Stack>
+            </Flex>
+          </Heading><TechStack skills={skillsArray}>
+
+      </TechStack></>
+    
   )
+  
 }
 
 export function getStaticProps() {
