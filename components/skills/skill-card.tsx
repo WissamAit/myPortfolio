@@ -15,15 +15,13 @@ import { item } from '../shared/animations/page-transitions'
 import NextLink from 'next/link'
 import { useLinkColor } from 'components/theme'
 
-const SkillCard = ({ name, image, link, description }) => {
+const SkillCard = ({ name, image }) => {
   const linkColor = useLinkColor()
   const { data, loading } = usePalette(image)
 
   return (
     <MotionBox variants={item}>
       <MotionBox whileHover={{ y: -5 }}>
-        <NextLink href={link} passHref>
-          <Link isExternal>
             <HStack
               p={4}
               bg={useColorModeValue('white', 'gray.800')}
@@ -81,17 +79,9 @@ const SkillCard = ({ name, image, link, description }) => {
                   >
                     {name}
                   </Text>
-                  <Text
-                    fontSize="sm"
-                    color={useColorModeValue('gray.500', 'gray.200')}
-                  >
-                    {description}
-                  </Text>
                 </VStack>
               </VStack>
             </HStack>
-          </Link>
-        </NextLink>
       </MotionBox>
     </MotionBox>
   )

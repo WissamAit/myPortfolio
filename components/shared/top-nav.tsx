@@ -148,7 +148,7 @@ export default function TopNav() {
                   size={'sm'}
                   showBorder={true}
                   borderColor={linkColor}
-                  src={'https://media-exp1.licdn.com/dms/image/C4E03AQHTYqBNmq7g3w/profile-displayphoto-shrink_800_800/0/1663337757751?e=1672876800&v=beta&t=uTjP8XfsaIU-btySwnp688a2H9V59qrPiQQ-SV-YVrU'}
+                  src={'/assets/images/logos/myavatar.png'}
                 />
               </NextLink>
             </MotionBox>

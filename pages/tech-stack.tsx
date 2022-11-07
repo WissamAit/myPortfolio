@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
 import Section from 'components/skills/section';
-import { AiTwotoneThunderbolt, AiOutlineCloudServer } from 'react-icons/ai';
+import { AiTwotoneThunderbolt, AiOutlineCloudServer, AiFillTool, AiOutlineInfoCircle } from 'react-icons/ai';
 import { BiDesktop } from 'react-icons/bi';
 import { GiSpiderWeb } from 'react-icons/gi';
 import SkillCard from 'components/skills/skill-card';
@@ -34,19 +34,29 @@ const tabList = [
     icon: AiTwotoneThunderbolt
   },
   {
-    name: 'Web Development',
+    name: 'Web developement',
     filterName: 'development',
     icon: BiDesktop
   },
   {
-    name: 'Web Design',
-    filterName: 'design',
+    name: 'CI/CD',
+    filterName: 'ci',
     icon: GiSpiderWeb
   },
   {
     name: 'Devops',
     filterName: 'devops',
     icon: AiOutlineCloudServer
+  },
+  {
+    name: 'IDE',
+    filterName: 'ide',
+    icon: AiFillTool
+  },
+  {
+    name: 'Databases',
+    filterName: 'database',
+    icon: AiOutlineInfoCircle
   }
 ];
 
@@ -100,10 +110,7 @@ const TechStack: NextPage<SkillProps> = ({ skills }) => {
                         <SkillCard
                           key={index}
                           name={tool.name}
-                          description={tool.description}
                           image={tool.image}
-                          // platform={"web"}
-                          link={tool.link}
                         />
                       ))}
                     </SimpleGrid>
@@ -116,10 +123,7 @@ const TechStack: NextPage<SkillProps> = ({ skills }) => {
                         <SkillCard
                           key={index}
                           name={tool.name}
-                          description={tool.description}
                           image={tool.image}
-                          // platform={"web"}
-                          link={tool.link}
                         />
                       ))}
                     </SimpleGrid>
@@ -132,10 +136,7 @@ const TechStack: NextPage<SkillProps> = ({ skills }) => {
                         <SkillCard
                           key={index}
                           name={tool.name}
-                          description={tool.description}
                           image={tool.image}
-                          // platform={"web"}
-                          link={tool.link}
                         />
                       ))}
                     </SimpleGrid>
@@ -148,10 +149,33 @@ const TechStack: NextPage<SkillProps> = ({ skills }) => {
                         <SkillCard
                           key={index}
                           name={tool.name}
-                          description={tool.description}
                           image={tool.image}
-                          // platform={"web"}
-                          link={tool.link}
+                        />
+                      ))}
+                    </SimpleGrid>
+                  </MotionBox>
+                </TabPanel>
+                <TabPanel px={0}>
+                  <MotionBox variants={container} initial="hidden" animate="visible">
+                    <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                      {skillsList.map((tool, index) => (
+                        <SkillCard
+                          key={index}
+                          name={tool.name}
+                          image={tool.image}
+                        />
+                      ))}
+                    </SimpleGrid>
+                  </MotionBox>
+                </TabPanel>
+                <TabPanel px={0}>
+                  <MotionBox variants={container} initial="hidden" animate="visible">
+                    <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                      {skillsList.map((tool, index) => (
+                        <SkillCard
+                          key={index}
+                          name={tool.name}
+                          image={tool.image}
                         />
                       ))}
                     </SimpleGrid>
